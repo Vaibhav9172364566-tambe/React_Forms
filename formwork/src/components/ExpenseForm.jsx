@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable array-callback-return */
+import React, {  useState } from 'react'
 import Input from './Input'
 import Select from './Select'
 
@@ -7,7 +8,6 @@ export default function ExpenseForm({ setExpenses }) {
     title: '',
     category: '',
     amount: '',
-    email: '',
   })
 
   const [errors, setErrors] = useState({})
@@ -19,13 +19,6 @@ export default function ExpenseForm({ setExpenses }) {
     ],
     category: [{ required: true, message: 'Please select a category' }],
     amount: [{ required: true, message: 'Please enter an amount' }],
-    email: [
-      { required: true, message: 'Please enter an email' },
-      {
-        pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-        message: 'Please enter a valid email',
-      },
-    ],
   }
 
   const validate = (formData) => {
@@ -108,14 +101,6 @@ export default function ExpenseForm({ setExpenses }) {
         value={expense.amount}
         onChange={handleChange}
         error={errors.amount}
-      />
-      <Input
-        label="Email"
-        id="email"
-        name="email"
-        value={expense.email}
-        onChange={handleChange}
-        error={errors.email}
       />
       <button className="add-btn">Add</button>
     </form>
