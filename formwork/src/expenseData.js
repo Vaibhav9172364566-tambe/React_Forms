@@ -10,7 +10,7 @@ export default [
         id: crypto.randomUUID(),
         title: 'Shirt',
         category: 'Clothes',
-        amount: 4000,
+        amount: 40001 ,
     },
     {
         id: crypto.randomUUID(),
